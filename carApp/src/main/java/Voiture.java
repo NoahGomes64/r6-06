@@ -12,6 +12,17 @@ public class Voiture {
         this.couleur = color;
         this.vitesse = 0;
     }
+    public void demarrerVoiture(Voiture voiture) {
+        if (estAdulte()) {
+            System.out.println(nom + " démarre la voiture.");
+        } else {
+            System.out.println("Le conducteur n'est pas assez âgé pour conduire.");
+        }
+    }
+
+    public void arreterVoiture(Voiture voiture) {
+        System.out.println(nom + " arrête la voiture.");
+    }
 
     public int getVitesse() {
         return this.vitesse;
