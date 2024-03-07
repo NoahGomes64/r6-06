@@ -1,6 +1,8 @@
 public class Voiture {
     private static final int MAX_SPEED = 120;
     private static final int SPEED_INCREMENT = 10;
+    private static final String MAX_SPEED_REACHED_MESSAGE= "La vitesse maximale est atteinte."
+    private static final String CAR_STOPPED_MESSAGE= "La voiture est déjà à l'arrêt."
     private String modele;
     private String couleur;
     private int vitesse;
@@ -20,7 +22,7 @@ public class Voiture {
             vitesse += SPEED_INCREMENT;
            afficherDetails();
         } else {
-            System.out.println("La vitesse maximale est atteinte.");
+            System.out.println(MAX_SPEED_REACHED_MESSAGE);
         }
     }
 
@@ -29,7 +31,7 @@ public class Voiture {
             vitesse -= SPEED_INCREMENT;
             afficherDetails();
         } else {
-            System.out.println("La voiture est déjà à l'arrêt.");
+            System.out.println(CAR_STOPPED_MESSAGE);
         }
     }
     private void afficherDetails(){
