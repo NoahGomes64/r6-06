@@ -1,5 +1,6 @@
 public class Conducteur {
     private String nom;
+    private static final int AGE_MIN_DRIVE = 10;
     private int age;
 
     public Conducteur(String name, int years) {
@@ -8,7 +9,7 @@ public class Conducteur {
     }
 
     public boolean estAdulte() {
-        return age >= 10;
+        return age >= AGE_MIN_DRIVE;
     }
 
 
