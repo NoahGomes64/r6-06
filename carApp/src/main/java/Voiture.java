@@ -18,7 +18,7 @@ public class Voiture {
     }
 
     public void accelerer() {
-        if (vitesse + SPEED_INCREMENT <= MAX_SPEED) {
+        if (canAccelerate()) {
             vitesse += SPEED_INCREMENT;
            afficherDetails();
         } else {
@@ -27,12 +27,18 @@ public class Voiture {
     }
 
     public void ralentir() {
-        if (vitesse - SPEED_INCREMENT >= 0) {
+        if (canDecelerate()) {
             vitesse -= SPEED_INCREMENT;
             afficherDetails();
         } else {
             System.out.println(CAR_STOPPED_MESSAGE);
         }
+    }
+    private boolean canAccelerate() {
+        return vitesse + SPEED_INCREMENT <= MAX_SPEED;
+    }
+    private boolean canDecelerate() {
+        return vitesse - SPEED_INCREMENT >= 0;
     }
     private void afficherDetails(){
         System.out.println("Modèle : " + modele);
